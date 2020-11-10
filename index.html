@@ -4,7 +4,6 @@
 	<header>
 		<title>My Search Page</title>
 		<link rel="stylesheet" href="styles.css">
-		<script src="require.js"></script>
 	</header>
 
 	<body>
@@ -32,7 +31,7 @@
 		@2020 Copyrights reserved. <a href="mailto:midoblackhorse@gmail.com">midoblackhorse@gmail.com</a>
 		</div>
 		<script>
-			const sqlite3 = require('sqlite3').verbose();
+			const sqlite3 = require(['sqlite3']).verbose();
 			// open the database
 			let db = new sqlite3.Database('./mydomains.db', sqlite3.OPEN_READWRITE, (err) => {
 			  if (err) {

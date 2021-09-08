@@ -1,0 +1,13 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     
+}
+
+object{
+    font-size: larger;
+}
+@media (min-width: 1024px) and (max-width: 1440px) {
+    
+}

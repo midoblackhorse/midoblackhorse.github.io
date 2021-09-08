@@ -1,58 +1,30 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="Lenovo" content="Lenovo devices for all users" />
+    <link rel="stylesheet" href="Site_Formats/CSS.css" />
+    <link rel="stylesheet" href="Header/header.css" />
+    <link rel="stylesheet" href="Nav/nav.css" />
+    <link rel="stylesheet" href="FrameWork/Framework.css" />
+    <title>Advanced Evaluation Systems</title>
+  </head>
 
-<html lang = "en">
-	<header>
-		<title>My Search Page</title>
-		<link rel="stylesheet" href="styles.css">
-		<script>const sqlite3 = require('sqlite3').verbose();</script>
-	</header>
+  <body>
+    <div class="container">
+      <header>
+        <img class="logo" src="Header/images/logo.jpg" alt="logo" />
+        <div class="email" style="font-size: larger; color: red;">
+          <p>Email</p>
+          <div id="output"></div>
+        </div>
+      </header>
 
-	<body>
-		<div class="toolbar">
-			<a href = "index.html">Web Search</a>
-			<a href = "img.html">Image Search</a>
-			<a href = "advanced.html">Advanced Search</a>
-		</div>
-		
-		<div class="search">
-			<form action="https://google.com/search">
-				<input type="label" value="" style="visibility: hidden; width: 0px;" name=""></tr>
-				<table class="search">
-					<tr><td><input type="text"  class="centered" style="width:60%;" name="q"></td></tr>
-					<tr><td><input type="submit"  class="centered" style="width:200px;" value="Google Search"></td></tr>
-				</table>
-			</form>
-			<div>
-			</div>
-		</div>
-	
-		<div id="domainstable"></div> 
-		
-		<div class="footer">
-		@2020 Copyrights reserved. <a href="mailto:midoblackhorse@gmail.com">midoblackhorse@gmail.com</a>
-		</div>
-		<script>			
-			// open the database
-			let db = new sqlite3.Database('./mydomains.db', sqlite3.OPEN_READWRITE, (err) => {
-			  if (err) {
-			    console.error(err.message);
-			  }
-			  console.log('Connected to the mydomains database.');
-			});
-
-			document.getElementById('domainstable').innerHTML = "<table><thead><tr><th>ID</th><th>Domain IP</th></tr></thead><tbody>";
-			db.serialize(() => {
-			  db.each(`SELECT *
-				   FROM domains`, (err, row) => {
-			    if (err) {
-			      console.error(err.message);
-			    }
-			    console.log(row.id + "\t" + row.ip_txt);
-			    document.getElementById('domainstable').innerHTML = document.getElementById('domainstable').innerHTML + "<tr><td>"+row.id+"</td><td>"+row.ip_txt+"</td></tr>";
-			  });
-			});
-
-			document.getElementById('domainstable').innerHTML = document.getElementById('domainstable').innerHTML + "</tbody></table>";
-		</script>
-	</body>	
+      <nav class="center"></nav>
+      <section></section>
+      <aside></aside>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="Js_File/Header/Email.js"></script>
+  </body>
 </html>
